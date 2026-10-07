@@ -15,18 +15,19 @@ const Footer = () => {
         
         <div className="flex flex-col sm:flex-row gap-8 md:gap-16">
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h4>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Support & Info</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#bundle" className="text-gray-400 hover:text-white transition-colors">Smart Notes</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About & Contact</a></li>
+              <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Support</h4>
+            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Legal</h4>
             <ul className="space-y-3">
-              <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Return Policy</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Refund Policy</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
             </ul>
           </div>
         </div>
