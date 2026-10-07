@@ -1,8 +1,19 @@
-import React from 'react';
-import { Download, RefreshCw, Infinity, BookOpen, Newspaper, Send } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Download, RefreshCw, Infinity, BookOpen, Newspaper, Send, Clock } from 'lucide-react';
 import { PURCHASE_URL } from '../data/constants';
 
 const Hero = () => {
+  const [timeLeft, setTimeLeft] = useState(35 * 60);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
   return (
     <section className="bg-navy-900 pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative gradients */}
@@ -20,8 +31,8 @@ const Hero = () => {
             <span className="text-brand-primary block">Start Studying.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white font-semibold mb-4 bg-brand-primary/20 inline-block px-4 py-2 rounded-lg border border-brand-primary/30">
-            200+ Books UPSC, And Other Government Exam
+          <p className="text-xl md:text-2xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 via-brand-primary to-yellow-300 text-transparent bg-clip-text inline-block px-6 py-3 rounded-full border border-brand-primary/50 bg-white/5 shadow-[0_0_25px_rgba(245,165,20,0.3)] hover:shadow-[0_0_40px_rgba(245,165,20,0.6)] hover:-translate-y-1 transition-all duration-300 animate-pulse">
+            ✨ 200+ Books UPSC, And Other Government Exam ✨
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
             You need a clear structure for learning and revision. Master the concepts. Organize your preparation. Revise smarter.
@@ -43,13 +54,24 @@ const Hero = () => {
               LIMITED TIME PRICING
             </div>
             
-            <div className="text-center mt-4 mb-6">
+            <div className="text-center mt-4 mb-4">
               <div className="flex justify-center items-center gap-3">
-                <span className="text-5xl font-extrabold text-navy-900">₹99</span>
+                <span className="text-5xl font-extrabold text-navy-900">₹75</span>
                 <span className="text-2xl text-gray-400 line-through font-semibold">₹2,999</span>
               </div>
               <p className="text-gray-600 font-medium mt-2">Complete 200+ Book PDF Smart Notes Bundle</p>
               <p className="text-sm text-gray-400 mt-1">One-time payment</p>
+            </div>
+
+            <div className="bg-red-50 border border-red-100 rounded-xl p-3 mb-6 text-center shadow-sm">
+              <p className="text-red-600 font-bold text-md flex items-center justify-center gap-2">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </span>
+                <Clock size={18} />
+                Offer Ends In: {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+              </p>
             </div>
 
             <div className="space-y-4 mb-8">
@@ -81,7 +103,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="block w-full bg-brand-primary hover:bg-brand-secondary text-navy-900 text-center font-bold text-lg py-4 rounded-xl shadow-[0_4px_14px_0_rgba(245,165,20,0.39)] hover:shadow-[0_6px_20px_rgba(245,165,20,0.23)] hover:-translate-y-1 transition-all duration-200"
             >
-              🚀 GET THE COMPLETE SMART NOTES BUNDLE — ₹99
+              🚀 GET THE COMPLETE SMART NOTES BUNDLE — ₹75
             </a>
             
             <p className="text-center text-sm text-gray-500 mt-4 flex justify-center items-center gap-2">

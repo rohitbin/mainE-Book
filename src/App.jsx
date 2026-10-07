@@ -7,11 +7,11 @@ import BundleGrid from './components/BundleGrid';
 import AudienceSection from './components/AudienceSection';
 import WhySmartNotes from './components/WhySmartNotes';
 import Pricing from './components/Pricing';
-import FreeSample from './components/FreeSample';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import StickyCTA from './components/StickyCTA';
 import Footer from './components/Footer';
+import PurchaseNotification from './components/PurchaseNotification';
 
 function App() {
   return (
@@ -24,11 +24,11 @@ function App() {
       <AudienceSection />
       <WhySmartNotes />
       <Pricing />
-      <FreeSample />
       <FAQ />
       <FinalCTA />
       <Footer />
       <StickyCTA />
+      <PurchaseNotification />
     </div>
   );
 }

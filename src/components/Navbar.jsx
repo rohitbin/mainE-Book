@@ -42,7 +42,7 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="bg-brand-primary hover:bg-brand-secondary text-navy-900 font-bold py-2 px-6 rounded-full shadow-lg transition-transform hover:scale-105"
             >
-              BUY NOW ₹99
+              BUY NOW ₹75
             </a>
           </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="bg-brand-primary text-navy-900 font-bold py-3 px-6 rounded-full text-center mt-4"
           >
-            BUY NOW ₹99
+            BUY NOW ₹75
           </a>
         </div>
       )}

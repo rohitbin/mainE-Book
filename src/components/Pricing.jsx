@@ -22,7 +22,7 @@ const Pricing = () => {
           </div>
           
           <div className="flex justify-center items-end gap-3 mb-4">
-            <span className="text-7xl font-extrabold text-navy-900 leading-none">₹99</span>
+            <span className="text-7xl font-extrabold text-navy-900 leading-none">₹75</span>
             <span className="text-3xl text-gray-400 line-through font-bold mb-1">₹2,999</span>
           </div>
           
@@ -58,7 +58,7 @@ const Pricing = () => {
             rel="noopener noreferrer"
             className="block w-full bg-brand-primary hover:bg-brand-secondary text-navy-900 text-center font-extrabold text-xl py-5 rounded-2xl shadow-[0_8px_20px_rgba(245,165,20,0.3)] hover:shadow-[0_10px_25px_rgba(245,165,20,0.4)] hover:-translate-y-1 transition-all duration-300"
           >
-            🚀 GET THE COMPLETE SMART NOTES BUNDLE — ₹99
+            🚀 GET THE COMPLETE SMART NOTES BUNDLE — ₹75
           </a>
         </div>
       </div>
