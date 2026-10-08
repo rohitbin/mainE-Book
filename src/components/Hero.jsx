@@ -64,7 +64,7 @@ const Hero = () => {
 
           <div className="mt-8 mb-8 lg:mb-0">
             <img 
-              src="/hero-banner.jpg" 
+              src="/hero-banner.png" 
               alt="200+ Books PDF Bundle" 
               className="w-full max-w-lg mx-auto lg:mx-0 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
             />

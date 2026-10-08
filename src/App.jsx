@@ -14,6 +14,8 @@ import Footer from './components/Footer';
 import PurchaseNotification from './components/PurchaseNotification';
 
 function App() {
+
+
   return (
     <div className="min-h-screen bg-[#F7F8FA] font-sans selection:bg-brand-primary selection:text-navy-900 pb-16 md:pb-0">
       <Navbar />
