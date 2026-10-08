@@ -26,7 +26,7 @@ const Pricing = () => {
             <span className="text-3xl text-gray-400 line-through font-bold mb-1">₹2,999</span>
           </div>
           
-          <p className="text-xl font-bold text-gray-800 mb-2">Complete 200+ Book PDF Smart Notes Bundle</p>
+          <p className="text-xl font-bold text-gray-800 mb-2">Complete 300+ Book PDF Smart Notes Bundle</p>
           <p className="text-gray-500 font-medium mb-10">One-time payment</p>
           
           <div className="space-y-5 mb-10 max-w-sm mx-auto text-left">
@@ -36,7 +36,7 @@ const Pricing = () => {
             </div>
             <div className="flex items-center gap-4 text-gray-700">
               <div className="bg-blue-100 p-2 rounded-full text-blue-600"><BookOpen size={24} /></div>
-              <span className="font-semibold text-lg">200+ Book PDFs</span>
+              <span className="font-semibold text-lg">300+ Book PDFs</span>
             </div>
             <div className="flex items-center gap-4 text-gray-700">
               <div className="bg-yellow-100 p-2 rounded-full text-yellow-600"><Infinity size={24} /></div>

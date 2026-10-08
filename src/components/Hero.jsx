@@ -32,7 +32,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 via-brand-primary to-yellow-300 text-transparent bg-clip-text inline-block px-6 py-3 rounded-full border border-brand-primary/50 bg-white/5 shadow-[0_0_25px_rgba(245,165,20,0.3)] hover:shadow-[0_0_40px_rgba(245,165,20,0.6)] hover:-translate-y-1 transition-all duration-300 animate-pulse">
-            ✨ 200+ Books UPSC, And Other Government Exam ✨
+            ✨ 300+ Books UPSC, And Other Government Exam ✨
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
             You need a clear structure for learning and revision. Master the concepts. Organize your preparation. Revise smarter.
@@ -65,7 +65,7 @@ const Hero = () => {
           <div className="mt-8 mb-8 lg:mb-0">
             <img 
               src="/hero-banner.png" 
-              alt="200+ Books PDF Bundle" 
+              alt="300+ Books PDF Bundle" 
               className="w-full max-w-lg mx-auto lg:mx-0 rounded-2xl shadow-2xl border border-white/10 hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -83,7 +83,7 @@ const Hero = () => {
                 <span className="text-5xl font-extrabold text-navy-900">₹75</span>
                 <span className="text-2xl text-gray-400 line-through font-semibold">₹2,999</span>
               </div>
-              <p className="text-gray-600 font-medium mt-2">Complete 200+ Book PDF Smart Notes Bundle</p>
+              <p className="text-gray-600 font-medium mt-2">Complete 300+ Book PDF Smart Notes Bundle</p>
               <p className="text-sm text-gray-400 mt-1">One-time payment</p>
             </div>
 
@@ -105,7 +105,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-3 text-gray-700">
                 <div className="bg-blue-100 p-2 rounded-full text-blue-600"><BookOpen size={20} /></div>
-                <span className="font-medium">200+ Book PDFs</span>
+                <span className="font-medium">300+ Book PDFs</span>
               </div>
               <div className="flex items-center gap-3 text-gray-700">
                 <div className="bg-yellow-100 p-2 rounded-full text-yellow-600"><Infinity size={20} /></div>

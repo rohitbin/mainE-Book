@@ -1,7 +1,7 @@
 export const faqs = [
   {
     question: "What is included in the ₹75 bundle?",
-    answer: "You will receive 200+ Book PDFs covering History, Geography, Economy, and Environment. All books are formatted as point-wise Smart Notes, organized chapter-wise for both Prelims and Mains."
+    answer: "You will receive 300+ Book PDFs covering History, Geography, Economy, and Environment. All books are formatted as point-wise Smart Notes, organized chapter-wise for both Prelims and Mains."
   },
   {
     question: "How will I receive the PDFs?",

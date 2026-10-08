@@ -4,7 +4,7 @@ import { CheckCircle2 } from 'lucide-react';
 const TrustStrip = () => {
   const benefits = [
     "Instant PDF Delivery",
-    "200+ Book PDFs",
+    "300+ Book PDFs",
     "Lifetime Access",
     "Daily Newspaper",
     "New Books PDF",
