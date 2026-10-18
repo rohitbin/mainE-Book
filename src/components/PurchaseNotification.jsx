@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { recentPurchases } from '../data/purchases';
 import { CheckCircle2, X } from 'lucide-react';
+import { usePrice } from '../context/PriceContext';
 
 const PurchaseNotification = () => {
+  const { notificationsActive } = usePrice();
   const [currentPurchase, setCurrentPurchase] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (!notificationsActive) return;
     let hideTimer;
+    let intervalTimer;
     
     // Function to show a new notification
     const showNextNotification = () => {
@@ -26,7 +30,7 @@ const PurchaseNotification = () => {
       showNextNotification();
       
       // Set interval for subsequent notifications (every 8 to 15 seconds)
-      setInterval(() => {
+      intervalTimer = setInterval(() => {
         showNextNotification();
       }, Math.floor(Math.random() * 7000) + 8000);
       
@@ -35,10 +39,11 @@ const PurchaseNotification = () => {
     return () => {
       clearTimeout(initialTimer);
       clearTimeout(hideTimer);
+      clearInterval(intervalTimer);
     };
-  }, []);
+  }, [notificationsActive]);
 
-  if (!currentPurchase) return null;
+  if (!notificationsActive || !currentPurchase) return null;
 
   return (
     <div 

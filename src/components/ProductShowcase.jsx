@@ -1,36 +1,39 @@
 import React from 'react';
 import { categories } from '../data/products';
-import { PURCHASE_URL } from '../data/constants';
+import { usePrice } from '../context/PriceContext';
 
-const ShowcaseSection = ({ title, topics, description, reverse, bgClass, imagePlaceholder, ctaText }) => (
-  <div className={`py-16 md:py-24 ${bgClass}`}>
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className={`flex flex-col gap-12 items-center ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-        <div className="flex-1 w-full text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 mb-6">{title}</h2>
-          {description && (
-            <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
-              {description}
-            </p>
-          )}
-          
-          <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
-            {topics.map((topic, i) => (
-              <span key={i} className="bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
-                {topic}
-              </span>
-            ))}
+const ShowcaseSection = ({ title, topics, description, reverse, bgClass, imagePlaceholder, ctaText }) => {
+  const { purchaseUrl } = usePrice();
+
+  return (
+    <div className={`py-16 md:py-24 ${bgClass}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={`flex flex-col gap-12 items-center ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
+          <div className="flex-1 w-full text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-navy-900 mb-6">{title}</h2>
+            {description && (
+              <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                {description}
+              </p>
+            )}
+            
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+              {topics.map((topic, i) => (
+                <span key={i} className="bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                  {topic}
+                </span>
+              ))}
+            </div>
+            
+            <a 
+              href={purchaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-primary hover:bg-brand-secondary text-navy-900 font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
+            >
+              {ctaText}
+            </a>
           </div>
-          
-          <a 
-            href={PURCHASE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-brand-primary hover:bg-brand-secondary text-navy-900 font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
-          >
-            {ctaText}
-          </a>
-        </div>
         
         <div className="flex-1 w-full">
           <div className="bg-white rounded-2xl shadow-xl aspect-video w-full flex items-center justify-center border-4 border-white overflow-hidden relative group">
@@ -47,7 +50,8 @@ const ShowcaseSection = ({ title, topics, description, reverse, bgClass, imagePl
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const ProductShowcase = () => {
   return (

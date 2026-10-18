@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ onOpenAdmin }) => {
   return (
     <footer className="bg-navy-900 border-t border-white/10 pt-16 pb-8 px-4 sm:px-6 lg:px-8 text-center md:text-left">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
@@ -19,6 +19,14 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About & Contact</a></li>
               <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+              <li>
+                <button 
+                  onClick={onOpenAdmin}
+                  className="text-gray-400 hover:text-brand-primary transition-colors cursor-pointer text-left flex items-center gap-1.5"
+                >
+                  🔒 Admin Login
+                </button>
+              </li>
             </ul>
           </div>
           <div>
@@ -35,7 +43,16 @@ const Footer = () => {
       
       <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
         <p>© 2026 StudySphere. All Rights Reserved.</p>
-        <p>Designed for UPSC IAS 2027</p>
+        <div className="flex items-center gap-4">
+          <p>Designed for UPSC IAS 2027</p>
+          <span>•</span>
+          <button 
+            onClick={onOpenAdmin}
+            className="hover:text-gray-300 transition-colors underline cursor-pointer"
+          >
+            Admin Access
+          </button>
+        </div>
       </div>
     </footer>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { faqs } from '../data/faq';
+import { usePrice } from '../context/PriceContext';
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
@@ -29,6 +30,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 };
 
 const FAQ = () => {
+  const { currentPrice } = usePrice();
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index) => {
@@ -44,15 +46,18 @@ const FAQ = () => {
         </div>
         
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <FAQItem 
-              key={index}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndex === index}
-              onClick={() => handleToggle(index)}
-            />
-          ))}
+          {faqs.map((faq, index) => {
+            const dynamicQuestion = faq.question.replace(/₹\d+/, `₹${currentPrice}`);
+            return (
+              <FAQItem 
+                key={index}
+                question={dynamicQuestion}
+                answer={faq.answer}
+                isOpen={openIndex === index}
+                onClick={() => handleToggle(index)}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

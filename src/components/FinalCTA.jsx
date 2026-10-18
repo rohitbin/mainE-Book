@@ -1,7 +1,9 @@
 import React from 'react';
-import { PURCHASE_URL } from '../data/constants';
+import { usePrice } from '../context/PriceContext';
 
 const FinalCTA = () => {
+  const { currentPrice, purchaseUrl } = usePrice();
+
   return (
     <section className="py-24 bg-navy-900 text-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Decorative gradients */}
@@ -18,12 +20,12 @@ const FinalCTA = () => {
         </p>
         
         <a 
-          href={PURCHASE_URL}
+          href={purchaseUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-brand-primary hover:bg-brand-secondary text-navy-900 font-extrabold text-xl py-5 px-10 rounded-2xl shadow-[0_8px_20px_rgba(245,165,20,0.3)] hover:shadow-[0_10px_25px_rgba(245,165,20,0.4)] hover:-translate-y-1 transition-all duration-300"
         >
-          🚀 GET COMPLETE SMART NOTES — ₹75
+          🚀 GET COMPLETE SMART NOTES — ₹{currentPrice}
         </a>
       </div>
     </section>

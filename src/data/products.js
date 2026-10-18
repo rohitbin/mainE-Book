@@ -5,12 +5,10 @@ import {
   Landmark, 
   Sprout, 
   TrendingUp, 
-  Wind,
-  Users,
-  AlertTriangle,
-  Building,
-  Coins,
-  ShieldAlert
+  Users, 
+  AlertTriangle, 
+  Building, 
+  Coins 
 } from 'lucide-react';
 
 export const bundleItems = [
