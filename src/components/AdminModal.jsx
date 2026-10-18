@@ -66,23 +66,17 @@ const AdminModal = ({ isOpen, onClose }) => {
     setIsLoading(true);
 
     setTimeout(() => {
-      const validEmail = email.trim().toLowerCase() === 'admin' || email.trim().toLowerCase() === 'admin@studysphere.com';
-      const validPass = password === 'admin123' || password === 'admin';
+      const validEmail = email.trim().toLowerCase() === 'rbind3512@gmail.com';
+      const validPass = password === 'Alpzazzaz';
 
       if (validEmail && validPass) {
         setIsLoggedIn(true);
         setError('');
       } else {
-        setError('Invalid credentials. Use demo: admin@studysphere.com / admin123');
+        setError('Invalid admin email or password. Please try again.');
       }
       setIsLoading(false);
     }, 600);
-  };
-
-  const handleQuickFill = () => {
-    setEmail('admin@studysphere.com');
-    setPassword('admin123');
-    setError('');
   };
 
   const handleLogout = () => {
@@ -212,13 +206,6 @@ const AdminModal = ({ isOpen, onClose }) => {
                   <input type="checkbox" defaultChecked className="rounded text-brand-primary focus:ring-brand-primary/20" />
                   <span>Remember session</span>
                 </label>
-                <button 
-                  type="button" 
-                  onClick={handleQuickFill}
-                  className="text-brand-primary font-bold hover:underline"
-                >
-                  Fill Demo Credentials
-                </button>
               </div>
 
               <button
@@ -236,11 +223,6 @@ const AdminModal = ({ isOpen, onClose }) => {
               </button>
             </form>
 
-            <div className="mt-6 pt-5 border-t border-gray-100 text-center">
-              <p className="text-xs text-gray-400">
-                Demo access: <code className="bg-gray-100 text-navy-900 font-mono px-1.5 py-0.5 rounded text-[11px]">admin@studysphere.com</code> / <code className="bg-gray-100 text-navy-900 font-mono px-1.5 py-0.5 rounded text-[11px]">admin123</code>
-              </p>
-            </div>
           </div>
         ) : (
           /* LOGGED IN ADMIN DASHBOARD */
@@ -256,7 +238,7 @@ const AdminModal = ({ isOpen, onClose }) => {
                     <h4 className="font-extrabold text-navy-900 text-base leading-tight">Admin Live Console</h4>
                     <p className="text-xs text-green-600 flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                      Logged in: admin@studysphere.com
+                      Logged in: rbind3512@gmail.com
                     </p>
                   </div>
                 </div>
