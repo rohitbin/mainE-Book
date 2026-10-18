@@ -111,8 +111,8 @@ const AdminModal = ({ isOpen, onClose }) => {
   const handleResetToDefaults = () => {
     resetAllSettings();
     setEditPrice('150');
-    setEditOriginal('2,999');
-    setEditLink('https://mintlink.in/m/https-t-me-nqvirwiygjzinjq1');
+    setEditOriginal('799');
+    setEditLink(purchaseUrl);
     setEditNotifications(true);
     setLiveSuccessMessage('✓ All settings reset to default factory values.');
     setTimeout(() => setLiveSuccessMessage(''), 4000);
@@ -370,7 +370,7 @@ const AdminModal = ({ isOpen, onClose }) => {
                           value={editOriginal}
                           onChange={(e) => setEditOriginal(e.target.value)}
                           className="w-full pl-6 pr-2 py-1.5 bg-white border border-gray-300 rounded-xl text-xs text-gray-700 outline-none focus:border-brand-primary"
-                          placeholder="2,999"
+                          placeholder="799"
                         />
                       </div>
                     </div>

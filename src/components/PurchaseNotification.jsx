@@ -61,8 +61,8 @@ const PurchaseNotification = () => {
           <p className="font-bold text-navy-900 text-sm">
             {currentPurchase.name} <span className="text-gray-500 font-normal">from {currentPurchase.state}</span>
           </p>
-          <p className="text-xs text-brand-primary font-semibold mt-1">
-            Just bought the bundle
+          <p className="text-xs text-brand-primary font-bold mt-1">
+            Just bought Indian History PYQ Book
           </p>
         </div>
 

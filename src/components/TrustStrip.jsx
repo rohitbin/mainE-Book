@@ -2,14 +2,15 @@ import React from 'react';
 
 const TrustStrip = () => {
   const benefits = [
-    { icon: "📚", text: "UPSC, SSC & Government Exam Books" },
-    { icon: "📝", text: "Previous Year Questions (PYQs)" },
-    { icon: "🎯", text: "MCQs & Practice Question Banks" },
-    { icon: "📖", text: "NCERT-Based Study Materials" },
-    { icon: "🔍", text: "Chapter-Wise Topic Organization" },
-    { icon: "⚡", text: "Point-Wise Notes for Quick Learning" },
-    { icon: "🔄", text: "Prelims & Mains Preparation" },
-    { icon: "✅", text: "Revision-Ready Study Materials" }
+    { icon: "🏛️", text: "Ancient Indian History" },
+    { icon: "⚔️", text: "Medieval History & Dynasties" },
+    { icon: "🇮🇳", text: "Modern India & Freedom Struggle" },
+    { icon: "📜", text: "Post-Independence India" },
+    { icon: "🎨", text: "Art, Architecture & Culture" },
+    { icon: "🎯", text: "3,000+ Topic-Wise Questions" },
+    { icon: "💡", text: "Detailed Analytical Explanations" },
+    { icon: "⚡", text: "Option Elimination Strategies" },
+    { icon: "📥", text: "Instant 17.5 MB PDF Download" }
   ];
 
   return (

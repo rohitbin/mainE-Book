@@ -13,11 +13,19 @@ export const PriceProvider = ({ children }) => {
   });
 
   const [originalPrice, setOriginalPrice] = useState(() => {
-    return localStorage.getItem('studySphere_original_price') || '2,999';
+    const saved = localStorage.getItem('studySphere_original_price');
+    if (!saved || saved === '2,999' || saved === '2999') {
+      return '799';
+    }
+    return saved;
   });
 
   const [purchaseUrl, setPurchaseUrl] = useState(() => {
-    return localStorage.getItem('studySphere_purchase_url') || PURCHASE_URL;
+    const saved = localStorage.getItem('studySphere_purchase_url');
+    if (!saved || saved.includes('nqvirwiygjzinjq1')) {
+      return PURCHASE_URL;
+    }
+    return saved;
   });
 
   const [notificationsActive, setNotificationsActive] = useState(() => {
@@ -68,7 +76,7 @@ export const PriceProvider = ({ children }) => {
 
   const resetAllSettings = () => {
     setCurrentPrice('150');
-    setOriginalPrice('2,999');
+    setOriginalPrice('799');
     setPurchaseUrl(PURCHASE_URL);
     setNotificationsActive(true);
     localStorage.removeItem('studySphere_price');
