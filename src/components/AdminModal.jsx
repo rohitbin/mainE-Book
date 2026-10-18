@@ -110,7 +110,7 @@ const AdminModal = ({ isOpen, onClose }) => {
 
   const handleResetToDefaults = () => {
     resetAllSettings();
-    setEditPrice('75');
+    setEditPrice('150');
     setEditOriginal('2,999');
     setEditLink('https://mintlink.in/m/https-t-me-nqvirwiygjzinjq1');
     setEditNotifications(true);
@@ -356,7 +356,7 @@ const AdminModal = ({ isOpen, onClose }) => {
                           value={editPrice}
                           onChange={(e) => setEditPrice(e.target.value)}
                           className="w-full pl-6 pr-2 py-1.5 bg-white border border-gray-300 rounded-xl text-xs font-bold text-navy-900 outline-none focus:border-brand-primary"
-                          placeholder="75"
+                          placeholder="150"
                         />
                       </div>
                     </div>
@@ -380,7 +380,7 @@ const AdminModal = ({ isOpen, onClose }) => {
                   <div>
                     <span className="text-[10px] uppercase font-bold text-gray-400 block mb-1.5">Quick Price Presets:</span>
                     <div className="flex flex-wrap gap-1.5">
-                      {['49', '75', '99', '149', '199', '299'].map((p) => (
+                      {['49', '99', '149', '150', '199', '299'].map((p) => (
                         <button
                           key={p}
                           type="button"

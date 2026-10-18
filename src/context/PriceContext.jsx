@@ -5,7 +5,11 @@ const StoreContext = createContext();
 
 export const PriceProvider = ({ children }) => {
   const [currentPrice, setCurrentPrice] = useState(() => {
-    return localStorage.getItem('studySphere_price') || '75';
+    const saved = localStorage.getItem('studySphere_price');
+    if (!saved || saved === '75') {
+      return '150';
+    }
+    return saved;
   });
 
   const [originalPrice, setOriginalPrice] = useState(() => {
@@ -63,7 +67,7 @@ export const PriceProvider = ({ children }) => {
   };
 
   const resetAllSettings = () => {
-    setCurrentPrice('75');
+    setCurrentPrice('150');
     setOriginalPrice('2,999');
     setPurchaseUrl(PURCHASE_URL);
     setNotificationsActive(true);
@@ -73,7 +77,7 @@ export const PriceProvider = ({ children }) => {
     localStorage.removeItem('studySphere_notifications_active');
   };
 
-  const numCurrent = parseInt(String(currentPrice).replace(/[^0-9]/g, ''), 10) || 75;
+  const numCurrent = parseInt(String(currentPrice).replace(/[^0-9]/g, ''), 10) || 150;
   const numOriginal = parseInt(String(originalPrice).replace(/[^0-9]/g, ''), 10) || 2999;
   const discountPercentage = Math.max(0, Math.min(99, Math.round(((numOriginal - numCurrent) / numOriginal) * 100)));
 
@@ -105,7 +109,7 @@ export const useStore = () => {
   const context = useContext(StoreContext);
   if (!context) {
     return {
-      currentPrice: '75',
+      currentPrice: '150',
       originalPrice: '2,999',
       purchaseUrl: PURCHASE_URL,
       notificationsActive: true,
