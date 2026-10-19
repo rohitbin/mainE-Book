@@ -8,6 +8,7 @@ const TrustStrip = () => {
     { icon: "📜", text: "Post-Independence India" },
     { icon: "🎨", text: "Art, Architecture & Culture" },
     { icon: "🎯", text: "3,000+ Topic-Wise Questions" },
+    { icon: "📖", text: "800 Pages & 57 Chapters" },
     { icon: "💡", text: "Detailed Analytical Explanations" },
     { icon: "⚡", text: "Option Elimination Strategies" },
     { icon: "📥", text: "Instant 17.5 MB PDF Download" }

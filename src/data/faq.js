@@ -1,7 +1,7 @@
 export const faqs = [
   {
     question: "What is included in the ₹85 Indian History PYQ Book?",
-    answer: "You get the complete 17.5 MB digital edition featuring 3,000+ topic-wise UPSC previous year questions and practice MCQs. It comprehensively covers Ancient History, Medieval History, Modern History, Post-Independence India, and Art & Culture — each with verified correct answers and detailed explanations."
+    answer: "You get the complete 17.5 MB digital edition featuring 3,000+ topic-wise UPSC previous year questions and practice MCQs spanning across 800 comprehensive pages and 57 chapters. It covers Ancient History, Medieval History, Modern History, Post-Independence India, and Art & Culture — each with verified correct answers and detailed explanations."
   },
   {
     question: "Are detailed explanations provided for every question?",

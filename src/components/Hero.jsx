@@ -7,7 +7,8 @@ import {
   Newspaper, 
   Infinity as InfinityIcon,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Layers
 } from 'lucide-react';
 import { usePrice } from '../context/PriceContext';
 
@@ -116,66 +117,94 @@ const Hero = () => {
           {/* Interactive Book Slider Column */}
           <div className="flex-1 w-full max-w-md lg:max-w-[460px] flex flex-col items-center">
             <div 
-              className="relative w-full h-[470px] sm:h-[490px] overflow-hidden rounded-3xl shadow-2xl border border-white/15 bg-navy-950/60 backdrop-blur-sm group flex items-center justify-center"
+              className="relative w-full h-[470px] sm:h-[490px] group"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              {/* Floating Slide Pill Badge */}
-              <div className="absolute top-3.5 left-3.5 z-20 bg-navy-900/90 text-brand-primary text-xs font-bold uppercase px-3 py-1 rounded-full border border-white/15 backdrop-blur-md shadow-md flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
-                <span>{slides[currentSlide].label}</span>
-                <span className="text-white/60 text-[10px]">({currentSlide + 1}/{slides.length})</span>
-              </div>
+              {/* Inner Clipped Box */}
+              <div className="relative w-full h-full overflow-hidden rounded-3xl shadow-2xl border border-white/15 bg-navy-950/60 backdrop-blur-sm flex items-center justify-center">
+                {/* Floating Slide Pill Badge */}
+                <div className="absolute top-3.5 left-3.5 z-20 bg-navy-900/90 text-brand-primary text-xs font-bold uppercase px-3 py-1 rounded-full border border-white/15 backdrop-blur-md shadow-md flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+                  <span>{slides[currentSlide].label}</span>
+                  <span className="text-white/60 text-[10px]">({currentSlide + 1}/{slides.length})</span>
+                </div>
 
-              {/* Prev & Next Arrow Controls */}
-              <button
-                onClick={(e) => { e.preventDefault(); prevSlide(); }}
-                aria-label="Previous slide"
-                className="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-navy-900/80 hover:bg-navy-900 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-lg transition-all opacity-85 hover:opacity-100 hover:scale-110 z-20 cursor-pointer"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={(e) => { e.preventDefault(); nextSlide(); }}
-                aria-label="Next slide"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-navy-900/80 hover:bg-navy-900 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-lg transition-all opacity-85 hover:opacity-100 hover:scale-110 z-20 cursor-pointer"
-              >
-                <ChevronRight size={20} />
-              </button>
+                {/* Prev & Next Arrow Controls */}
+                <button
+                  onClick={(e) => { e.preventDefault(); prevSlide(); }}
+                  aria-label="Previous slide"
+                  className="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-navy-900/80 hover:bg-navy-900 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-lg transition-all opacity-85 hover:opacity-100 hover:scale-110 z-20 cursor-pointer"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                <button
+                  onClick={(e) => { e.preventDefault(); nextSlide(); }}
+                  aria-label="Next slide"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-navy-900/80 hover:bg-navy-900 text-white border border-white/20 backdrop-blur-md flex items-center justify-center shadow-lg transition-all opacity-85 hover:opacity-100 hover:scale-110 z-20 cursor-pointer"
+                >
+                  <ChevronRight size={20} />
+                </button>
 
-              {/* Slides Track */}
-              <div 
-                className="flex w-full h-full transition-transform duration-500 ease-out items-center"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {slides.map((slide) => (
-                  <div key={slide.id} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2.5">
-                    <img 
-                      src={slide.src} 
-                      alt={slide.alt} 
-                      className="w-full h-full object-contain rounded-2xl select-none"
+                {/* Slides Track */}
+                <div 
+                  className="flex w-full h-full transition-transform duration-500 ease-out items-center"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {slides.map((slide) => (
+                    <div key={slide.id} className="w-full h-full flex-shrink-0 flex items-center justify-center p-2.5">
+                      <img 
+                        src={slide.src} 
+                        alt={slide.alt} 
+                        className="w-full h-full object-contain rounded-2xl select-none"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Dot Indicators */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-navy-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                  {slides.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentSlide(i)}
+                      className={`h-2 rounded-full transition-all cursor-pointer ${
+                        currentSlide === i ? 'w-6 bg-brand-primary' : 'w-2 bg-white/40 hover:bg-white/80'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
                     />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
-              {/* Dot Indicators */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-navy-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentSlide(i)}
-                    className={`h-2 rounded-full transition-all cursor-pointer ${
-                      currentSlide === i ? 'w-6 bg-brand-primary' : 'w-2 bg-white/40 hover:bg-white/80'
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
+              {/* OUTSIDE BADGES: Half outside and half touching the box with BLINK animation */}
+              {/* Top-Right Corner Badge: 57 Chapters */}
+              <div className="absolute top-0 right-4 sm:right-6 -translate-y-1/2 z-30">
+                <div className="animate-badge-blink-dark bg-navy-900 text-white text-xs sm:text-sm font-black uppercase px-3.5 py-1.5 rounded-full border-2 border-brand-primary shadow-[0_4px_20px_rgba(245,165,20,0.55)] flex items-center gap-2 backdrop-blur-md select-none">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-90"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                  </span>
+                  <Layers size={14} className="text-brand-primary" />
+                  <span>57 Chapters</span>
+                </div>
+              </div>
+
+              {/* Bottom-Right Corner Badge: 800 Pages */}
+              <div className="absolute bottom-0 right-4 sm:right-6 translate-y-1/2 z-30">
+                <div className="animate-badge-blink bg-brand-primary text-navy-950 text-xs sm:text-sm font-black uppercase px-3.5 py-1.5 rounded-full border-2 border-white/80 shadow-[0_4px_25px_rgba(245,165,20,0.65)] flex items-center gap-2 select-none">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-navy-900 opacity-90"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-navy-900"></span>
+                  </span>
+                  <BookOpen size={14} className="text-navy-950" />
+                  <span>800 Pages</span>
+                </div>
               </div>
             </div>
 
             {/* Quick Slide Selector Tabs underneath */}
-            <div className="flex flex-wrap justify-center gap-2 mt-3 w-full">
+            <div className="flex flex-wrap justify-center gap-2 mt-6 w-full">
               {slides.map((slide, i) => (
                 <button
                   key={slide.id}
@@ -210,7 +239,7 @@ const Hero = () => {
                     {discountPercentage}% OFF
                   </span>
                 </div>
-                <p className="text-gray-700 font-bold text-sm sm:text-base mt-1">Complete 300+ Book PDF Smart Notes Bundle</p>
+                <p className="text-gray-700 font-bold text-sm sm:text-base mt-1">Complete Indian History PYQ Book • 800 Pages</p>
                 <p className="text-[11px] text-gray-400">One-time payment • Lifetime offline access</p>
               </div>
 
@@ -234,7 +263,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center gap-3 text-gray-700 text-xs sm:text-sm">
                   <div className="bg-blue-100 p-1.5 rounded-lg text-blue-600 flex-shrink-0"><BookOpen size={16} /></div>
-                  <span className="font-semibold">300+ Book PDFs</span>
+                  <span className="font-semibold">800 Pages • 57 Chapters</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700 text-xs sm:text-sm">
                   <div className="bg-yellow-100 p-1.5 rounded-lg text-yellow-600 flex-shrink-0"><InfinityIcon size={16} /></div>
