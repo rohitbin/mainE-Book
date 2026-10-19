@@ -265,13 +265,22 @@ const Hero = () => {
                   <div className="bg-blue-100 p-1.5 rounded-lg text-blue-600 flex-shrink-0"><BookOpen size={16} /></div>
                   <span className="font-semibold">800 Pages • 57 Chapters</span>
                 </div>
-                <div className="flex items-center gap-3 text-gray-700 text-xs sm:text-sm">
-                  <div className="bg-yellow-100 p-1.5 rounded-lg text-yellow-600 flex-shrink-0"><InfinityIcon size={16} /></div>
-                  <span className="font-semibold">Lifetime Access</span>
+                {/* Blinking Lifetime Access of 300+ Book PDFs & Daily Newspaper */}
+                <div className="flex items-center gap-2.5 bg-amber-500/10 border border-amber-500/30 rounded-xl px-2.5 py-1.5 animate-container-blink shadow-sm">
+                  <div className="bg-brand-primary p-1 rounded-md text-navy-900 flex-shrink-0">
+                    <InfinityIcon size={15} />
+                  </div>
+                  <span className="font-extrabold text-xs sm:text-[13px] text-navy-900 animate-blink-text leading-tight flex items-center gap-1.5">
+                    <span>Lifetime Access Of 300+ Book Pdf &amp; Daily Newspaper.</span>
+                    <span className="relative flex h-2 w-2 flex-shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-80"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+                    </span>
+                  </span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700 text-xs sm:text-sm">
                   <div className="bg-orange-100 p-1.5 rounded-lg text-orange-600 flex-shrink-0"><Newspaper size={16} /></div>
-                  <span className="font-semibold">Daily Newspaper</span>
+                  <span className="font-semibold">Daily Newspaper (The Hindu &amp; Express)</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-700 text-xs sm:text-sm">
                   <div className="bg-purple-100 p-1.5 rounded-lg text-purple-600 flex-shrink-0"><RefreshCw size={16} /></div>

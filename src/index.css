@@ -47,3 +47,38 @@
   animation: badgeBlinkDark 1.3s ease-in-out infinite;
 }
 
+@keyframes textHighlightBlink {
+  0%, 100% {
+    opacity: 1;
+    color: #17182B;
+    text-shadow: 0 0 10px rgba(245, 165, 20, 0.45);
+  }
+  50% {
+    opacity: 0.35;
+    color: #b45309;
+    text-shadow: 0 0 2px rgba(245, 165, 20, 0.1);
+  }
+}
+
+.animate-blink-text {
+  animation: textHighlightBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes containerBlink {
+  0%, 100% {
+    border-color: rgba(245, 165, 20, 0.6);
+    background-color: rgba(245, 165, 20, 0.14);
+    box-shadow: 0 0 14px rgba(245, 165, 20, 0.25);
+  }
+  50% {
+    border-color: rgba(245, 165, 20, 0.2);
+    background-color: rgba(245, 165, 20, 0.04);
+    box-shadow: none;
+  }
+}
+
+.animate-container-blink {
+  animation: containerBlink 1.2s ease-in-out infinite;
+}
+
+
