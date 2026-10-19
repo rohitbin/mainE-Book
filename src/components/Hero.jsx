@@ -12,7 +12,7 @@ import {
 import { usePrice } from '../context/PriceContext';
 
 const Hero = () => {
-  const { currentPrice, originalPrice, purchaseUrl } = usePrice();
+  const { currentPrice, originalPrice, purchaseUrl, discountPercentage } = usePrice();
   const [timeLeft, setTimeLeft] = useState(35 * 60);
 
   // Slides configuration
@@ -207,7 +207,7 @@ const Hero = () => {
                   <span className="text-4xl sm:text-5xl font-black text-navy-900 tracking-tight">₹{currentPrice}</span>
                   <span className="text-xl sm:text-2xl text-gray-400 line-through font-bold">₹{originalPrice}</span>
                   <span className="text-xs font-black text-green-700 bg-green-100 px-2 py-0.5 rounded-md">
-                    81% OFF
+                    {discountPercentage}% OFF
                   </span>
                 </div>
                 <p className="text-gray-700 font-bold text-sm sm:text-base mt-1">Complete 300+ Book PDF Smart Notes Bundle</p>

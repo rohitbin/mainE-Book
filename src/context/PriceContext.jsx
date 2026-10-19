@@ -6,8 +6,8 @@ const StoreContext = createContext();
 export const PriceProvider = ({ children }) => {
   const [currentPrice, setCurrentPrice] = useState(() => {
     const saved = localStorage.getItem('studySphere_price');
-    if (!saved || saved === '75') {
-      return '150';
+    if (!saved || saved === '75' || saved === '150') {
+      return '85';
     }
     return saved;
   });
@@ -44,7 +44,7 @@ export const PriceProvider = ({ children }) => {
     }
 
     if (original !== undefined) {
-      const cleanOriginal = String(original).replace(/[^0-9]/g, '') || '2999';
+      const cleanOriginal = String(original).replace(/[^0-9]/g, '') || '799';
       const formatted = Number(cleanOriginal).toLocaleString('en-IN');
       setOriginalPrice(formatted);
       localStorage.setItem('studySphere_original_price', formatted);
@@ -75,7 +75,7 @@ export const PriceProvider = ({ children }) => {
   };
 
   const resetAllSettings = () => {
-    setCurrentPrice('150');
+    setCurrentPrice('85');
     setOriginalPrice('799');
     setPurchaseUrl(PURCHASE_URL);
     setNotificationsActive(true);
@@ -85,8 +85,8 @@ export const PriceProvider = ({ children }) => {
     localStorage.removeItem('studySphere_notifications_active');
   };
 
-  const numCurrent = parseInt(String(currentPrice).replace(/[^0-9]/g, ''), 10) || 150;
-  const numOriginal = parseInt(String(originalPrice).replace(/[^0-9]/g, ''), 10) || 2999;
+  const numCurrent = parseInt(String(currentPrice).replace(/[^0-9]/g, ''), 10) || 85;
+  const numOriginal = parseInt(String(originalPrice).replace(/[^0-9]/g, ''), 10) || 799;
   const discountPercentage = Math.max(0, Math.min(99, Math.round(((numOriginal - numCurrent) / numOriginal) * 100)));
 
   return (
@@ -117,11 +117,11 @@ export const useStore = () => {
   const context = useContext(StoreContext);
   if (!context) {
     return {
-      currentPrice: '150',
-      originalPrice: '2,999',
+      currentPrice: '85',
+      originalPrice: '799',
       purchaseUrl: PURCHASE_URL,
       notificationsActive: true,
-      discountPercentage: 97,
+      discountPercentage: 89,
       updateAllSettings: () => {},
       updatePurchaseUrl: () => {},
       updatePricing: () => {},
