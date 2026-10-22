@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
         <div className="md:max-w-sm">
           <div className="text-2xl font-black tracking-tighter text-white mb-3">
-            StudySphere<span className="text-brand-primary">.</span>
+            StudySphereIAS <span className="text-brand-primary">Book.</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-4">
             Indian History PYQ Book with 3,000+ UPSC Previous Year Questions, topic-wise classification, correct answers, and comprehensive explanations.
@@ -59,7 +59,7 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>© 2026 StudySphere. All Rights Reserved.</p>
+        <p>© 2026 StudySphereIAS Book. All Rights Reserved.</p>
         <div className="flex items-center gap-4">
           <p>Indian History PYQ Book (3,000+ Questions)</p>
         </div>

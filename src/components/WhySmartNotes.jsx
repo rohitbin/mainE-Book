@@ -1,9 +1,7 @@
 import React from 'react';
-import { Target, ArrowRight, Brain, Zap, CheckCircle2 } from 'lucide-react';
-import { usePrice } from '../context/PriceContext';
+import { Target, ArrowRight } from 'lucide-react';
 
 const WhySmartNotes = () => {
-  const { currentPrice, purchaseUrl } = usePrice();
 
   const reasons = [
     {

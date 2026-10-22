@@ -6,7 +6,13 @@ import {
   Palette, 
   HelpCircle, 
   Clock, 
-  FileCheck2 
+  FileCheck2,
+  Mountain,
+  Globe,
+  Compass,
+  MapPin,
+  Trees,
+  Navigation
 } from 'lucide-react';
 
 export const historyModules = [
@@ -76,36 +82,53 @@ export const historyModules = [
   }
 ];
 
-export const bookStats = [
-  { value: '3,000+', label: 'Questions & PYQs', sub: 'From UPSC & State PSCs' },
-  { value: '5 Core', label: 'History Pillars', sub: 'Ancient to Post-Independence' },
-  { value: '100%', label: 'Detailed Explanations', sub: 'Option-wise breakdown' },
-  { value: '17.5 MB', label: 'Instant PDF Download', sub: 'Lifetime offline access' }
-];
-
-export const sampleQuestions = [
-  {
-    exam: "UPSC CSE Prelims",
-    year: "History",
-    question: "With reference to ancient Indian History, consider the following statements regarding the 'Dhamma' of Ashoka:\n1. It was a synthesis of all religions and contained no sectarian bias.\n2. Ashoka appointed Dhamma Mahamattas to spread the message of Dhamma across and outside his empire.\nWhich of the statements given above is/are correct?",
-    options: [
-      { key: "A", text: "1 only" },
-      { key: "B", text: "2 only" },
-      { key: "C", text: "Both 1 and 2", correct: true },
-      { key: "D", text: "Neither 1 nor 2" }
-    ],
-    explanation: "Both statements are correct. Ashoka's Dhamma was not a formal religion or religious doctrine; rather, it was a code of ethical conduct, moral duty, and social responsibility inspired by universal human values. Major Rock Edict V mentions the creation and appointment of 'Dhamma Mahamattas' in his 14th regnal year to propagate Dhamma among all sects and even beyond the imperial frontiers."
+export const geographyModules = [
+  { 
+    id: 101, 
+    title: 'Physical Geography', 
+    icon: Mountain, 
+    badge: '750+ Questions',
+    desc: 'Geomorphology, Earth’s interior, plate tectonics, vulcanism, climatology, cyclones, pressure belts, and ocean currents.', 
+    category: 'Physical Geography' 
   },
-  {
-    exam: "UPSC CSE Prelims",
-    year: "Modern History",
-    question: "Why was the Simon Commission boycotted by the Indian National Congress in 1927?",
-    options: [
-      { key: "A", text: "It supported the Muslim League's demand for separate electorates" },
-      { key: "B", text: "It did not include any Indian member in the commission", correct: true },
-      { key: "C", text: "It recommended the partition of Bengal" },
-      { key: "D", text: "It proposed abolition of provincial autonomy" }
-    ],
-    explanation: "The Indian Statutory Commission (commonly known as the Simon Commission) was appointed by the British Government under Sir John Simon in November 1927. The exclusion of all Indians from an all-white 7-member commission that was tasked with deciding India's constitutional destiny was seen as an insult to national self-respect, leading to universal boycott by the Congress, Muslim League, and Liberal Federation."
+  { 
+    id: 102, 
+    title: 'Indian Geography', 
+    icon: MapPin, 
+    badge: '900+ Questions',
+    desc: 'Himalayan & Peninsular drainage, monsoon mechanism, El Niño, agro-climatic zones, soils, mineral belts, and industries.', 
+    category: 'Indian Geography' 
+  },
+  { 
+    id: 103, 
+    title: 'World Geography', 
+    icon: Globe, 
+    badge: '550+ Questions',
+    desc: 'Major mountain ranges, straits, tectonic trenches, desert formations, global biomes, and economic resource distribution.', 
+    category: 'World Geography' 
+  },
+  { 
+    id: 104, 
+    title: 'Human & Economic Geography', 
+    icon: Navigation, 
+    badge: '400+ Questions',
+    desc: 'Demographic trends, urbanization, migration patterns, industrial clusters, dedicated freight corridors, and major ports.', 
+    category: 'Economic Geography' 
+  },
+  { 
+    id: 105, 
+    title: 'Environment & Ecology', 
+    icon: Trees, 
+    badge: '400+ Questions',
+    desc: 'Ecosystem dynamics, biodiversity hotspots, Ramsar wetlands, Biosphere reserves, wildlife sanctuaries, and COP climate treaties.', 
+    category: 'Environment' 
+  },
+  { 
+    id: 106, 
+    title: 'Map Revision & Critical Locations', 
+    icon: Compass, 
+    badge: 'High Yield',
+    desc: 'High-yield UPSC map pointings: strategic passes, river tributaries, national parks, conflict zones, and maritime chokepoints.', 
+    category: 'Map Practice' 
   }
 ];
