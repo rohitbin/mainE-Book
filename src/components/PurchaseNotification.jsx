@@ -14,9 +14,18 @@ const PurchaseNotification = () => {
     let intervalTimer;
     
     // Function to show a new notification
+    const products = [
+      '500+ Books PDFs Mega Bundle',
+      '500+ Books PDFs Mega Bundle',
+      'Indian Geography PYQ Book',
+      '500+ Books PDFs Mega Bundle',
+      'Indian History PYQ Book'
+    ];
+
     const showNextNotification = () => {
       const randomIndex = Math.floor(Math.random() * recentPurchases.length);
-      setCurrentPurchase(recentPurchases[randomIndex]);
+      const chosenProduct = products[Math.floor(Math.random() * products.length)];
+      setCurrentPurchase({ ...recentPurchases[randomIndex], product: chosenProduct });
       setIsVisible(true);
       
       // Hide after 4 seconds
@@ -62,7 +71,7 @@ const PurchaseNotification = () => {
             {currentPurchase.name} <span className="text-gray-500 font-normal">from {currentPurchase.state}</span>
           </p>
           <p className="text-xs text-brand-primary font-bold mt-1">
-            Just bought Indian History PYQ Book
+            Just bought {currentPurchase.product || '500+ Books PDFs Mega Bundle'}
           </p>
         </div>
 

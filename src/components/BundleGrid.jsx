@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { historyModules, geographyModules } from '../data/products';
-import { BookOpen, Globe, Landmark } from 'lucide-react';
+import { historyModules, geographyModules, megaBundleModules } from '../data/products';
+import { BookOpen, Globe, Landmark, Sparkles } from 'lucide-react';
 
 const BundleGrid = () => {
-  const [activeBook, setActiveBook] = useState('history'); // 'history' | 'geography'
+  const [activeBook, setActiveBook] = useState('mega'); // 'mega' | 'history' | 'geography'
 
-  const currentModules = activeBook === 'history' ? historyModules : geographyModules;
+  const currentModules = 
+    activeBook === 'mega' 
+      ? megaBundleModules 
+      : activeBook === 'history' 
+        ? historyModules 
+        : geographyModules;
 
   return (
     <section id="modules" className="py-20 bg-gray-50">
@@ -15,17 +20,29 @@ const BundleGrid = () => {
             <BookOpen size={14} className="text-brand-primary" /> Comprehensive Syllabus Coverage
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-navy-900 mb-4 tracking-tight">
-            What's Inside The PYQ Books
+            What's Inside The Library
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-            Organized topic-wise and chronologically to give you complete mastery over UPSC Preliminary and Mains examination topics.
+            Organized topic-wise and exam-wise to give you complete mastery over UPSC, State PCS, SSC, and Railway examinations.
           </p>
 
           {/* Book Switcher Tabs */}
-          <div className="inline-flex p-1.5 bg-gray-200/80 rounded-2xl shadow-inner gap-2">
+          <div className="inline-flex flex-wrap justify-center p-1.5 bg-gray-200/80 rounded-2xl shadow-inner gap-2">
+            <button
+              onClick={() => setActiveBook('mega')}
+              className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all cursor-pointer ${
+                activeBook === 'mega'
+                  ? 'bg-navy-900 text-white shadow-md'
+                  : 'text-gray-600 hover:text-navy-900'
+              }`}
+            >
+              <Sparkles size={16} className={activeBook === 'mega' ? 'text-brand-primary' : ''} />
+              <span>500+ Books Series (All-In-One)</span>
+            </button>
+
             <button
               onClick={() => setActiveBook('history')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-extrabold text-sm transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all cursor-pointer ${
                 activeBook === 'history'
                   ? 'bg-navy-900 text-white shadow-md'
                   : 'text-gray-600 hover:text-navy-900'
@@ -34,9 +51,10 @@ const BundleGrid = () => {
               <Landmark size={16} className={activeBook === 'history' ? 'text-brand-primary' : ''} />
               <span>Indian History PYQs (57 Chapters)</span>
             </button>
+
             <button
               onClick={() => setActiveBook('geography')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-extrabold text-sm transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl font-extrabold text-xs sm:text-sm transition-all cursor-pointer ${
                 activeBook === 'geography'
                   ? 'bg-navy-900 text-white shadow-md'
                   : 'text-gray-600 hover:text-navy-900'
@@ -48,7 +66,7 @@ const BundleGrid = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentModules.map((item) => {
             const Icon = item.icon;
             return (

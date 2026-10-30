@@ -13,7 +13,7 @@ const Footer = () => {
             StudySphereIAS <span className="text-brand-primary">Book.</span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-4">
-            Indian History PYQ Book with 3,000+ UPSC Previous Year Questions, topic-wise classification, correct answers, and comprehensive explanations.
+            500+ Books PDFs Complete Library with 30,000+ UPSC &amp; Govt. Exam Previous Year Questions, NCERTs (Class 6-12), topic-wise classification, and comprehensive explanations.
           </p>
           <a
             href={purchaseUrl}

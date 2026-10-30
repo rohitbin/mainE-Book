@@ -1,9 +1,37 @@
 import React, { createContext, useContext, useState } from 'react';
-import { HISTORY_PURCHASE_URL, GEOGRAPHY_PURCHASE_URL } from '../data/constants';
+import { 
+  HISTORY_PURCHASE_URL, 
+  GEOGRAPHY_PURCHASE_URL,
+  BUNDLE_PURCHASE_URL,
+  BUNDLE_PRICE,
+  BUNDLE_ORIGINAL_PRICE 
+} from '../data/constants';
 
 const StoreContext = createContext();
 
 export const PriceProvider = ({ children }) => {
+  // 500+ Books Mega Bundle State (First Priority)
+  const [bundlePrice, setBundlePrice] = useState(() => {
+    const saved = localStorage.getItem('studySphere_bundle_price');
+    if (!saved || saved === '149' || saved === '150') {
+      return BUNDLE_PRICE;
+    }
+    return saved;
+  });
+
+  const [bundleOriginalPrice, setBundleOriginalPrice] = useState(() => {
+    const saved = localStorage.getItem('studySphere_bundle_original_price');
+    return saved || BUNDLE_ORIGINAL_PRICE;
+  });
+
+  const [bundlePurchaseUrl, setBundlePurchaseUrl] = useState(() => {
+    const saved = localStorage.getItem('studySphere_bundle_purchase_url');
+    if (!saved || saved.includes('k7Qa2wc') || saved.includes('mintlink.in') || saved.includes('nqvirwiygjzinjq1')) {
+      return BUNDLE_PURCHASE_URL;
+    }
+    return saved;
+  });
+
   // History Book State
   const [currentPrice, setCurrentPrice] = useState(() => {
     const saved = localStorage.getItem('studySphere_price');
@@ -61,6 +89,9 @@ export const PriceProvider = ({ children }) => {
     geoPrice, 
     geoOriginal, 
     geoUrl, 
+    bundleP,
+    bundleOrig,
+    bundleU,
     notifications 
   }) => {
     if (price !== undefined) {
@@ -105,6 +136,27 @@ export const PriceProvider = ({ children }) => {
       localStorage.setItem('studySphere_geo_purchase_url', cleanGeoUrl);
     }
 
+    if (bundleP !== undefined) {
+      const cleanBundlePrice = String(bundleP).replace(/[^0-9]/g, '');
+      if (cleanBundlePrice) {
+        setBundlePrice(cleanBundlePrice);
+        localStorage.setItem('studySphere_bundle_price', cleanBundlePrice);
+      }
+    }
+
+    if (bundleOrig !== undefined) {
+      const cleanBundleOrig = String(bundleOrig).replace(/[^0-9]/g, '') || '2999';
+      const formatted = Number(cleanBundleOrig).toLocaleString('en-IN');
+      setBundleOriginalPrice(formatted);
+      localStorage.setItem('studySphere_bundle_original_price', formatted);
+    }
+
+    if (bundleU !== undefined && bundleU.trim()) {
+      const cleanBundleUrl = bundleU.trim();
+      setBundlePurchaseUrl(cleanBundleUrl);
+      localStorage.setItem('studySphere_bundle_purchase_url', cleanBundleUrl);
+    }
+
     if (notifications !== undefined) {
       setNotificationsActive(notifications);
       localStorage.setItem('studySphere_notifications_active', String(notifications));
@@ -123,11 +175,18 @@ export const PriceProvider = ({ children }) => {
     updateAllSettings({ geoPrice: newPrice, geoOriginal: newOriginal, geoUrl: newUrl });
   };
 
+  const updateBundleSettings = (newPrice, newOriginal, newUrl) => {
+    updateAllSettings({ bundleP: newPrice, bundleOrig: newOriginal, bundleU: newUrl });
+  };
+
   const updatePricing = (newPrice, newOriginal) => {
     updateAllSettings({ price: newPrice, original: newOriginal });
   };
 
   const resetAllSettings = () => {
+    setBundlePrice(BUNDLE_PRICE);
+    setBundleOriginalPrice(BUNDLE_ORIGINAL_PRICE);
+    setBundlePurchaseUrl(BUNDLE_PURCHASE_URL);
     setCurrentPrice('85');
     setOriginalPrice('799');
     setPurchaseUrl(HISTORY_PURCHASE_URL);
@@ -135,6 +194,9 @@ export const PriceProvider = ({ children }) => {
     setGeographyOriginalPrice('799');
     setGeographyPurchaseUrl(GEOGRAPHY_PURCHASE_URL);
     setNotificationsActive(true);
+    localStorage.removeItem('studySphere_bundle_price');
+    localStorage.removeItem('studySphere_bundle_original_price');
+    localStorage.removeItem('studySphere_bundle_purchase_url');
     localStorage.removeItem('studySphere_price');
     localStorage.removeItem('studySphere_original_price');
     localStorage.removeItem('studySphere_purchase_url');
@@ -152,9 +214,17 @@ export const PriceProvider = ({ children }) => {
   const numGeoOriginal = parseInt(String(geographyOriginalPrice).replace(/[^0-9]/g, ''), 10) || 799;
   const geographyDiscountPercentage = Math.max(0, Math.min(99, Math.round(((numGeoOriginal - numGeoCurrent) / numGeoOriginal) * 100)));
 
+  const numBundleCurrent = parseInt(String(bundlePrice).replace(/[^0-9]/g, ''), 10) || 75;
+  const numBundleOriginal = parseInt(String(bundleOriginalPrice).replace(/[^0-9]/g, ''), 10) || 2999;
+  const bundleDiscountPercentage = Math.max(0, Math.min(99, Math.round(((numBundleOriginal - numBundleCurrent) / numBundleOriginal) * 100)));
+
   return (
     <StoreContext.Provider 
       value={{ 
+        bundlePrice,
+        bundleOriginalPrice,
+        bundlePurchaseUrl,
+        bundleDiscountPercentage,
         currentPrice, 
         originalPrice, 
         purchaseUrl,
@@ -172,6 +242,7 @@ export const PriceProvider = ({ children }) => {
         updatePurchaseUrl,
         updatePricing, 
         updateGeographySettings,
+        updateBundleSettings,
         resetPricing: resetAllSettings, 
         resetAllSettings,
         setNotificationsActive: (val) => {
@@ -189,6 +260,10 @@ export const useStore = () => {
   const context = useContext(StoreContext);
   if (!context) {
     return {
+      bundlePrice: '75',
+      bundleOriginalPrice: '2,999',
+      bundlePurchaseUrl: BUNDLE_PURCHASE_URL,
+      bundleDiscountPercentage: 97,
       currentPrice: '85',
       originalPrice: '799',
       purchaseUrl: HISTORY_PURCHASE_URL,
@@ -206,6 +281,7 @@ export const useStore = () => {
       updatePurchaseUrl: () => {},
       updatePricing: () => {},
       updateGeographySettings: () => {},
+      updateBundleSettings: () => {},
       resetPricing: () => {},
       resetAllSettings: () => {}
     };

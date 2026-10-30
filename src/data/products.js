@@ -12,7 +12,10 @@ import {
   Compass,
   MapPin,
   Trees,
-  Navigation
+  Navigation,
+  BookOpen,
+  Layers,
+  Newspaper
 } from 'lucide-react';
 
 export const historyModules = [
@@ -130,5 +133,56 @@ export const geographyModules = [
     badge: 'High Yield',
     desc: 'High-yield UPSC map pointings: strategic passes, river tributaries, national parks, conflict zones, and maritime chokepoints.', 
     category: 'Map Practice' 
+  }
+];
+
+export const megaBundleModules = [
+  {
+    id: 201,
+    title: 'NCERTs Class 6 to 12 Complete Set',
+    icon: BookOpen,
+    badge: 'All Subjects',
+    desc: 'Complete NCERTs in searchable PDF format for Science, Social Science, History, Geography, Political Science, and Economics.',
+    category: 'Foundations'
+  },
+  {
+    id: 202,
+    title: 'Standard Reference Books & Notes',
+    icon: Layers,
+    badge: 'Topper Notes',
+    desc: 'High-yield theory compilations for Indian Polity, Modern History, Geography, Economy, Ethics & Integrity, and CSAT.',
+    category: 'Standard Books'
+  },
+  {
+    id: 203,
+    title: '30,000+ Topic-Wise PYQ Books',
+    icon: Landmark,
+    badge: '1995–2024 Solved',
+    desc: 'Complete chapter-wise previous year question banks with in-depth analytical explanations for Prelims & Mains.',
+    category: 'Question Bank'
+  },
+  {
+    id: 204,
+    title: 'Exam-Wise Special Collections',
+    icon: Flag,
+    badge: 'All Govt. Exams',
+    desc: 'Dedicated curated question series for UPSC CSE, State PCS (UPPSC, BPSC, MPPSC), SSC CGL/CHSL, Railways & Defence.',
+    category: 'Exam Specific'
+  },
+  {
+    id: 205,
+    title: 'Daily Newspapers (The Hindu & Express)',
+    icon: Newspaper,
+    badge: 'Every Morning',
+    desc: 'Fresh PDF editions of leading national dailies uploaded every morning, along with monthly current affairs compilations.',
+    category: 'Daily Updates'
+  },
+  {
+    id: 206,
+    title: 'Maps, Atlas & Essay Compilations',
+    icon: Globe,
+    badge: 'Visual Assets',
+    desc: 'High-yield thematic map pointings (India & World), model essays, disaster management, and governance case studies.',
+    category: 'Special Modules'
   }
 ];
