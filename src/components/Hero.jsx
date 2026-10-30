@@ -10,7 +10,7 @@ import {
   Sparkles,
   CheckCircle2,
   Clock,
-  ShieldCheck
+  Send
 } from 'lucide-react';
 import { usePrice } from '../context/PriceContext';
 
@@ -287,8 +287,8 @@ const Hero = () => {
 
                   <div className="flex items-center justify-between gap-2 mt-2 text-[10px] text-gray-400">
                     <span className="flex items-center gap-1">
-                      <ShieldCheck size={11} className="text-emerald-400" />
-                      Instant Google Drive Link Sent Immediately
+                      <Send size={11} className="text-sky-400" />
+                      Instant Telegram Join Link After Payment
                     </span>
                     <span>🔒 256-Bit Secure Checkout</span>
                   </div>
