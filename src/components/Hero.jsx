@@ -197,27 +197,57 @@ const Hero = () => {
                     500+ Books PDFs Complete Library
                   </h2>
 
-                  <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-3">
-                    UPSC, State PCS, SSC, Railways, Banking &amp; Defence. Every NCERT (6–12), 30,000+ topic-wise PYQs (1995–2024), and daily newspaper updates in one Google Drive folder.
-                  </p>
+                  {/* Exam Badges Strip */}
+                  <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      UPSC
+                    </span>
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      State PCS
+                    </span>
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      SSC
+                    </span>
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      Railways
+                    </span>
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      Banking &amp; Defence
+                    </span>
+                  </div>
 
-                  {/* 4 Compact Bullet Highlights */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-3 text-xs text-gray-200">
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
-                      <span>NCERTs (Class 6-12 All Subjects)</span>
+                  {/* Eye-Catching Highlighted Points */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3 text-xs">
+                    <div className="flex items-start gap-2 bg-white/5 border border-white/10 rounded-xl p-2.5 hover:border-brand-primary/40 transition-colors">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-white block font-bold leading-tight">Every NCERT (Class 6–12)</strong>
+                        <span className="text-amber-300 font-semibold text-[11px]">English &amp; Hindi Medium</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
-                      <span>30,000+ Topic-Wise PYQs</span>
+
+                    <div className="flex items-start gap-2 bg-white/5 border border-white/10 rounded-xl p-2.5 hover:border-brand-primary/40 transition-colors">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-white block font-bold leading-tight">Topic-Wise PYQs</strong>
+                        <span className="text-gray-300 text-[11px]">+ Daily Practice Questions</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
-                      <span>All Standard Reference Books</span>
+
+                    <div className="flex items-start gap-2 bg-white/5 border border-white/10 rounded-xl p-2.5 hover:border-brand-primary/40 transition-colors">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-white block font-bold leading-tight">Daily 3 Newspapers</strong>
+                        <span className="text-amber-300 font-semibold text-[11px]">2 National &amp; 1 International</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <CheckCircle2 size={14} className="text-emerald-400 flex-shrink-0" />
-                      <span>Daily The Hindu &amp; Express PDFs</span>
+
+                    <div className="flex items-start gap-2 bg-white/5 border border-white/10 rounded-xl p-2.5 hover:border-brand-primary/40 transition-colors">
+                      <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-white block font-bold leading-tight">Daily New Books Added</strong>
+                        <span className="text-gray-300 text-[11px]">All in One Place &amp; More...</span>
+                      </div>
                     </div>
                   </div>
                 </div>

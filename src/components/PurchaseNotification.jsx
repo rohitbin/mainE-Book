@@ -15,11 +15,11 @@ const PurchaseNotification = () => {
     
     // Function to show a new notification
     const products = [
-      '500+ Books PDFs Mega Bundle',
-      '500+ Books PDFs Mega Bundle',
-      'Indian Geography PYQ Book',
-      '500+ Books PDFs Mega Bundle',
-      'Indian History PYQ Book'
+      '500+ Books Bundle',
+      '500+ Books Bundle',
+      'Geography PYQ Book',
+      '500+ Books Bundle',
+      'History PYQ Book'
     ];
 
     const showNextNotification = () => {
@@ -28,20 +28,20 @@ const PurchaseNotification = () => {
       setCurrentPurchase({ ...recentPurchases[randomIndex], product: chosenProduct });
       setIsVisible(true);
       
-      // Hide after 4 seconds
+      // Hide after 3.5 seconds
       hideTimer = setTimeout(() => {
         setIsVisible(false);
-      }, 4000);
+      }, 3500);
     };
 
     // Initial delay before first notification
     const initialTimer = setTimeout(() => {
       showNextNotification();
       
-      // Set interval for subsequent notifications (every 8 to 15 seconds)
+      // Set interval for subsequent notifications (every 9 to 16 seconds)
       intervalTimer = setInterval(() => {
         showNextNotification();
-      }, Math.floor(Math.random() * 7000) + 8000);
+      }, Math.floor(Math.random() * 7000) + 9000);
       
     }, 3000);
 
@@ -56,30 +56,31 @@ const PurchaseNotification = () => {
 
   return (
     <div 
-      className={`fixed bottom-4 left-4 z-50 transition-all duration-500 transform ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'
+      className={`fixed bottom-14 md:bottom-4 left-3 md:left-4 z-50 transition-all duration-300 transform pointer-events-none ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}
     >
-      <div className="bg-white rounded-xl shadow-2xl p-4 flex items-start gap-4 border border-gray-100 max-w-[320px] relative overflow-hidden">
-        <div className="bg-green-100 text-green-600 p-2 rounded-full flex-shrink-0">
-          <CheckCircle2 size={24} />
+      <div className="pointer-events-auto bg-white/95 backdrop-blur-sm rounded-lg shadow-lg px-2.5 py-2 flex items-center gap-2 border border-gray-200/90 max-w-[235px] sm:max-w-[255px] relative">
+        <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+          <CheckCircle2 size={13} className="text-emerald-600" />
         </div>
         
-        <div className="flex-1 pr-4">
-          <p className="text-xs text-gray-500 mb-0.5">Verified Purchase</p>
-          <p className="font-bold text-navy-900 text-sm">
-            {currentPurchase.name} <span className="text-gray-500 font-normal">from {currentPurchase.state}</span>
+        <div className="flex-1 pr-3 min-w-0">
+          <p className="text-[9px] uppercase tracking-wider text-gray-400 font-bold leading-none mb-0.5">Verified</p>
+          <p className="font-bold text-gray-900 text-[11px] truncate leading-tight">
+            {currentPurchase.name} <span className="text-gray-500 font-normal text-[10px]">({currentPurchase.state})</span>
           </p>
-          <p className="text-xs text-brand-primary font-bold mt-1">
-            Just bought {currentPurchase.product || '500+ Books PDFs Mega Bundle'}
+          <p className="text-[10px] text-amber-600 font-bold leading-tight mt-0.5 truncate">
+            Bought {currentPurchase.product || '500+ Books Bundle'}
           </p>
         </div>
 
         <button 
           onClick={() => setIsVisible(false)} 
-          className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
+          className="absolute top-1 right-1 text-gray-400 hover:text-gray-600 p-0.5 rounded-full hover:bg-gray-100 transition-colors"
+          aria-label="Close notification"
         >
-          <X size={14} />
+          <X size={11} />
         </button>
       </div>
     </div>
