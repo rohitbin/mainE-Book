@@ -42,7 +42,7 @@ export const PriceProvider = ({ children }) => {
 
   const [geographyPurchaseUrl, setGeographyPurchaseUrl] = useState(() => {
     const saved = localStorage.getItem('studySphere_geo_purchase_url');
-    if (!saved || saved.includes('indian-geography-pyq-book')) {
+    if (!saved || saved.includes('indian-geography-pyq-book') || saved.includes('mintlink.in') || saved.includes('complete-geographic-master-book')) {
       return GEOGRAPHY_PURCHASE_URL;
     }
     return saved;
