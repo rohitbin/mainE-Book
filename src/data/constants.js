@@ -1,5 +1,5 @@
-export const PURCHASE_URL = "https://mintlink.in/m/indian-history-pyq-book-3000-upsc-previous-year-questions-8da926e1";
-export const FREE_SAMPLE_URL = "https://mintlink.in/m/indian-history-pyq-book-3000-upsc-previous-year-questions-8da926e1";
+export const PURCHASE_URL = "https://rzp.io/rzp/qlU1yjk";
+export const FREE_SAMPLE_URL = "https://rzp.io/rzp/qlU1yjk";
 
 export const HISTORY_PURCHASE_URL = PURCHASE_URL;
 export const HISTORY_FREE_SAMPLE_URL = FREE_SAMPLE_URL;

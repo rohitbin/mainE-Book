@@ -21,7 +21,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-brand-primary hover:underline font-bold"
           >
-            <span>Official Storefront on MintLink</span>
+            <span>Official Storefront • Verified Checkout</span>
             <ExternalLink size={12} />
           </a>
         </div>
@@ -52,7 +52,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm">
               <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">Instant Download Help</a></li>
               <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">Payment FAQ</a></li>
-              <li><span className="text-gray-500 text-xs">Powered by MintLink Payments</span></li>
+              <li><span className="text-gray-500 text-xs">Powered by 256-Bit Secure Payments</span></li>
             </ul>
           </div>
         </div>

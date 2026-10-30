@@ -51,7 +51,7 @@ export const PriceProvider = ({ children }) => {
 
   const [purchaseUrl, setPurchaseUrl] = useState(() => {
     const saved = localStorage.getItem('studySphere_purchase_url');
-    if (!saved || saved.includes('nqvirwiygjzinjq1')) {
+    if (!saved || saved.includes('nqvirwiygjzinjq1') || saved.includes('mintlink.in')) {
       return HISTORY_PURCHASE_URL;
     }
     return saved;

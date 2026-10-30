@@ -13,7 +13,7 @@ export const faqs = [
   },
   {
     question: "How will I receive the book after payment?",
-    answer: "Immediately after completing your payment on MintLink via UPI (Google Pay, PhonePe, Paytm, etc.) or Cards/Net Banking, you will be redirected to an instant download page, and a secure download link will also be sent to your email."
+    answer: "Immediately after completing your payment via UPI (Google Pay, PhonePe, Paytm, etc.) or Cards/Net Banking, you will get instant access, and download/access links will also be delivered to you."
   },
   {
     question: "Can I read this book on mobile and print it out?",
@@ -28,7 +28,7 @@ export const faqs = [
     answer: "UPSC frequently repeats underlying historical themes, terms, and conceptual traps. Practicing 3,000+ PYQs trains your brain in active recall and option elimination, helping you convert negative marks into positive scores in the actual exam."
   },
   {
-    question: "What payment modes are accepted on MintLink?",
-    answer: "MintLink supports all Indian payment methods including UPI (Google Pay, PhonePe, Paytm, BHIM, CRED), Debit/Credit Cards, and Net Banking with 256-bit bank-grade encryption."
+    question: "What payment modes are accepted?",
+    answer: "We support all secure Indian payment methods including UPI (Google Pay, PhonePe, Paytm, BHIM, CRED), Debit/Credit Cards, and Net Banking with 256-bit bank-grade encryption via Razorpay."
   }
 ];
