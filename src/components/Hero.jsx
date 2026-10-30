@@ -214,6 +214,9 @@ const Hero = () => {
                     <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
                       Banking &amp; Defence
                     </span>
+                    <span className="text-[11px] font-extrabold text-brand-primary bg-brand-primary/10 border border-brand-primary/30 px-2.5 py-0.5 rounded-md">
+                      &amp; For Other Government Exams
+                    </span>
                   </div>
 
                   {/* Eye-Catching Highlighted Points */}
