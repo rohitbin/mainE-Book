@@ -155,11 +155,11 @@ const Hero = () => {
         {/* FIRST PRIORITY PRODUCT: 500+ BOOKS PDFs COMPLETE LIBRARY (COMPACT SHOWCASE) */}
         {/* ========================================================================= */}
         <div id="books" className="scroll-mt-28 sm:scroll-mt-32 mb-12">
-          <div className="max-w-3xl sm:max-w-4xl mx-auto relative bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 rounded-2xl sm:rounded-3xl border-2 border-brand-primary shadow-[0_0_35px_rgba(245,165,20,0.25)] p-4 sm:p-6 backdrop-blur-xl overflow-hidden">
+          <div className="max-w-4xl sm:max-w-5xl mx-auto relative bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 rounded-2xl sm:rounded-3xl border-2 border-brand-primary shadow-[0_0_35px_rgba(245,165,20,0.25)] p-5 sm:p-7 backdrop-blur-xl overflow-hidden">
             
             {/* Top Priority Ribbon Strip - Compact */}
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-white/10">
-              <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-brand-primary text-navy-950 font-black px-3 py-1 rounded-full text-[11px] sm:text-xs uppercase tracking-wider shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-5 pb-3 border-b border-white/10">
+              <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-brand-primary text-navy-950 font-black px-3.5 py-1 rounded-full text-[11px] sm:text-xs uppercase tracking-wider shadow-sm">
                 <Flame size={13} className="fill-current animate-bounce" />
                 <span>#1 Best Seller • First Priority</span>
               </div>
@@ -170,23 +170,17 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
               
-              {/* LEFT: COMPACT IMAGE */}
-              <div className="w-full sm:w-auto flex-shrink-0 flex justify-center">
-                <div className="relative w-44 sm:w-52 md:w-56 group">
-                  <div className="relative rounded-xl overflow-hidden border border-white/20 shadow-xl bg-navy-950">
+              {/* LEFT: ENLARGED IMAGE */}
+              <div className="w-full md:w-auto flex-shrink-0 flex justify-center">
+                <div className="relative w-64 sm:w-72 md:w-80 lg:w-96 group">
+                  <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-navy-950">
                     <img 
                       src="/500-books-mega-bundle.jpg" 
                       alt="500+ Books PDFs Complete Series" 
-                      className="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-105"
+                      className="w-full h-auto object-cover transform transition-transform duration-300 group-hover:scale-[1.02]"
                     />
-                    <div className="absolute top-2 left-2 bg-navy-900/90 text-brand-primary text-[10px] font-black uppercase px-2 py-0.5 rounded-full border border-white/20 shadow-sm backdrop-blur-md">
-                      500+ Books
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-brand-primary text-navy-950 text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow-sm">
-                      Lifetime Access
-                    </div>
                   </div>
                 </div>
               </div>
