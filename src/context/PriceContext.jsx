@@ -13,7 +13,7 @@ export const PriceProvider = ({ children }) => {
   // 500+ Books Mega Bundle State (First Priority)
   const [bundlePrice, setBundlePrice] = useState(() => {
     const saved = localStorage.getItem('studySphere_bundle_price');
-    if (!saved || saved === '149' || saved === '150' || saved === '85') {
+    if (!saved || saved === '149' || saved === '150' || saved === '85' || saved === '75') {
       return BUNDLE_PRICE;
     }
     return saved;
@@ -214,7 +214,7 @@ export const PriceProvider = ({ children }) => {
   const numGeoOriginal = parseInt(String(geographyOriginalPrice).replace(/[^0-9]/g, ''), 10) || 799;
   const geographyDiscountPercentage = Math.max(0, Math.min(99, Math.round(((numGeoOriginal - numGeoCurrent) / numGeoOriginal) * 100)));
 
-  const numBundleCurrent = parseInt(String(bundlePrice).replace(/[^0-9]/g, ''), 10) || 75;
+  const numBundleCurrent = parseInt(String(bundlePrice).replace(/[^0-9]/g, ''), 10) || 77;
   const numBundleOriginal = parseInt(String(bundleOriginalPrice).replace(/[^0-9]/g, ''), 10) || 2999;
   const bundleDiscountPercentage = Math.max(0, Math.min(99, Math.round(((numBundleOriginal - numBundleCurrent) / numBundleOriginal) * 100)));
 
@@ -260,7 +260,7 @@ export const useStore = () => {
   const context = useContext(StoreContext);
   if (!context) {
     return {
-      bundlePrice: '75',
+      bundlePrice: '77',
       bundleOriginalPrice: '2,999',
       bundlePurchaseUrl: BUNDLE_PURCHASE_URL,
       bundleDiscountPercentage: 97,
