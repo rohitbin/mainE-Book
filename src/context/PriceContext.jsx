@@ -26,7 +26,7 @@ export const PriceProvider = ({ children }) => {
 
   const [bundlePurchaseUrl, setBundlePurchaseUrl] = useState(() => {
     const saved = localStorage.getItem('studySphere_bundle_purchase_url');
-    if (!saved || saved.includes('k7Qa2wc') || saved.includes('mintlink.in') || saved.includes('nqvirwiygjzinjq1')) {
+    if (!saved || saved.includes('k7Qa2wc') || saved.includes('HL2rZG0') || saved.includes('rzp.io')) {
       return BUNDLE_PURCHASE_URL;
     }
     return saved;
