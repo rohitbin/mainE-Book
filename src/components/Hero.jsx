@@ -125,31 +125,6 @@ const Hero = () => {
       <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-500 opacity-20 rounded-full blur-3xl pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* Social Proof Trust Strip */}
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="flex -space-x-2.5">
-            <img className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover bg-blue-100" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4" alt="Customer avatar" />
-            <img className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover bg-orange-100" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&backgroundColor=ffdfbf" alt="Customer avatar" />
-            <img className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover bg-purple-100" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Raj&backgroundColor=c0aede" alt="Customer avatar" />
-            <img className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 object-cover bg-green-100" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Priya&backgroundColor=d1d4f9" alt="Customer avatar" />
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-navy-900 bg-brand-primary flex items-center justify-center text-navy-900 font-bold text-[10px] z-10">
-              +12k
-            </div>
-          </div>
-          <div className="flex items-center gap-1 text-xs text-gray-300">
-            <div className="flex text-yellow-400">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-gray-300 text-xs font-medium">
-              Trusted by <span className="text-white font-bold">12,000+</span> aspirants across India
-            </span>
-          </div>
-        </div>
 
         {/* ========================================================================= */}
         {/* FIRST PRIORITY PRODUCT: 500+ BOOKS PDFs COMPLETE LIBRARY (COMPACT SHOWCASE) */}
